@@ -1,0 +1,22 @@
+<div class="wrapper">
+  <div id="formContent">
+    <div id="formBody">
+      <div class="row">
+        <form>
+          <input type="text" class="input mt-5" id="login" name="email" placeholder="Email">
+          <input type="text" class="input" id="password" name="senha" placeholder="Senha">
+          <input type="submit" class="button-logar" value="Logar">
+        </form>
+      </div>
+    </div>
+
+    <div id="formFooter">
+      <a class="underlineHover" (click)="requestSenha.showModal()">Esqueçeu a senha?</a>
+      <br>
+      <a class="underlineHover" [routerLink]="['/cadastre']">Registrar?</a>
+    </div>
+
+  </div>
+</div>
+
+<app-request-senha #requestSenha></app-request-senha>

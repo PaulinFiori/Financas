@@ -1,0 +1,43 @@
+<nav class="navbar-default navbar-static-side" role="navigation">
+  <div class="sidebar-collapse">
+    <ul class="nav metismenu" id="side-menu">
+      <li>
+        <div>
+          <img class="logo" src="./../../../../assets/images/logo-white.png">
+        </div>
+      </li>
+      <li class="nav-header">
+        <div class="profile-element" dropdown>
+          <img *ngIf="userPhoto?.url" class="rounded-circle border-primary square-image" [src]="location.protocol + userPhoto.url"
+            onerror="this.src='../../../../assets/images/user.jpg'" width="48">
+          <img *ngIf="!userPhoto.url" class="rounded-circle border-primary square-image" src="../../../../assets/images/user.jpg"
+            width="48">
+          <a>
+            <span class="block m-t-xs">
+              <strong class="font-bold">{{username}}</strong>
+            </span>
+          </a>
+        </div>
+      </li>
+
+      <li class="li-menu" *ngFor="let item of MENU" [ngClass]="{active: activeRoute(item.url)}">
+        <a [routerLink]="[item?.url]" *ngIf="!item.filhos">
+          <i [ngClass]="item.icone"></i>
+          <span class="nav-label">{{item.nome}}</span>
+        </a>
+        <a *ngIf="item.filhos">
+          <i [ngClass]="item.icone"></i>
+          <span class="nav-label">{{item.nome}}</span>
+          <span class="fa arrow"></span>
+        </a>
+        <ul *ngIf="item.filhos" class="nav nav-second-level collapse" [ngClass]="{in: activeRoute(item.url)}">
+          <li *ngFor="let filho of item.filhos" [ngClass]="{active: activeRoute(filho.url)}">
+            <a [routerLink]="[filho.url]">{{filho.nome}}</a>
+          </li>
+        </ul>
+      </li>
+
+    </ul>
+
+  </div>
+</nav>

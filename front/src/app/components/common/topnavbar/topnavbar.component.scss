@@ -1,0 +1,174 @@
+@import "./../../../app.component";
+
+.navbar-header {
+  width: 60%;
+  display: flex;
+}
+
+.search-button {
+  margin-left: 0px;
+}
+
+.close-button {
+  margin-left: 5px;
+}
+
+.search-input {
+  height: 30px;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  border-radius: 0;
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0;
+  padding: 5px 0;
+  width: 100%;
+  text-align: left;
+  background: 0;
+  box-shadow: none;
+  color: inherit;
+  margin-top: 15px;
+}
+
+.search-input:focus {
+  border: none;
+  border-bottom: 1px solid #ddd;
+  outline: 0;
+}
+
+.btn-search {
+  margin-top: 10px;
+  padding-top: 8px;
+  padding-bottom: 4px;
+}
+
+.minimalize-styl-2 {
+  height: 30px;
+}
+
+.transition {
+  width: 0%;
+  -webkit-transition: width 0.2s ease-in-out;
+  -moz-transition: width 0.2s ease-in-out;
+  -o-transition: width 0.2s ease-in-out;
+  transition: width 0.2s ease-in-out;
+  display: flex;
+}
+
+.open {
+  width: 100%;
+}
+
+.over {
+  position: relative;
+  width: 100%;
+}
+
+.animation-speed {
+  -webkit-animation-duration: 0.3s;
+  -moz-animation-duration: 0.3s;
+  -o-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+}
+
+::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: $text-color;
+  opacity: 0.4;
+  font-weight: 100;
+}
+
+:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: $text-color;
+  opacity: 0.4;
+  font-weight: 100;
+}
+
+::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: $text-color;
+  opacity: 0.4;
+  font-weight: 100;
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: $text-color;
+  opacity: 0.4;
+  font-weight: 100;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: $text-color;
+  opacity: 0.4;
+  font-weight: 100;
+}
+
+.dropdown-search {
+  width: 100%;
+  display: block;
+  position: relative;
+}
+
+.square-image {
+  width: 50px;
+  height: 50px;
+}
+
+.dropdown-menu {
+  max-height: 250px;
+  overflow: auto
+}
+
+.position-icon-whats-fundo {
+  max-height: 250px;
+  position: fixed;
+  color:#0ecc28;
+  left: 93.5%;
+  top: 92.5%;
+  width: 8em;
+  margin-top: -2.5em;
+  border-radius: 40px 30% rgb(179, 175, 175);
+  text-shadow: 0.1em 0.1em 0.2em;
+}
+
+@media only screen and (max-width: 480px) {
+  
+  .position-icon-whats-fundo {
+    max-height: 250px;
+    position: fixed;
+    color:#0ecc28;
+    left: 80%;
+    top: 92%;
+    width: 6em;
+    margin-top: -2.5em;
+    border-radius: 40px 30% rgb(179, 175, 175);
+    text-shadow: 0.1em 0.1em 0.2em;
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width: 768px) {
+  .navbar-top-links {
+    margin-right: 2%;
+  }
+
+  .hamburguer-mobile {
+    margin-right: 90%;
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width: 480px) {
+  .position-icon-whats-fundo {
+    left: 85%;
+  }
+}
+
+@media screen and (max-width: 992px) and (min-width: 768px) {
+  .position-icon-whats-fundo {
+    left: 85%;
+  }
+}

@@ -1,0 +1,21 @@
+<div class="wrapper">
+    <div id="formContent">
+      <div id="formBody">
+          <div class="row">
+            <form>
+                <img src="../../../assets/images/user.webp" class="foto rounded-circle mt-5" alt="User Foto">
+                <input type="file" class="input mt-5" id="avatar" name="avatar" accept="image/*"/>
+                <input type="text" class="input" id="nome" name="nome" placeholder="Nome">
+                <input type="text" class="input" id="login" name="email" placeholder="Email">
+                <input type="password" class="input" id="password" name="senha" placeholder="Senha">
+                <input type="submit" class="button-logar" value="Logar">
+            </form>
+          </div>
+      </div>
+  
+      <div id="formFooter">
+        <a class="underlineHover" [routerLink]="['/login']">Voltar ao login?</a>
+      </div>
+  
+    </div>
+</div>
