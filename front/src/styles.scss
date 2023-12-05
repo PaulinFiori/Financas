@@ -8,3 +8,41 @@
 
 /* Importing Datepicker SCSS file. */
 @import "node_modules/ngx-bootstrap/datepicker/bs-datepicker";
+
+@import "./assets/styles/variables";
+@import "./assets/styles/typography";
+@import "./assets/styles/navigation";
+@import "./assets/styles/top_navigation";
+@import "./assets/styles/buttons";
+@import "./assets/styles/badges_labels";
+@import "./assets/styles/elements";
+@import "./assets/styles/sidebar";
+@import "./assets/styles/base";
+@import "./assets/styles/pages";
+@import "./assets/styles/metismenu";
+@import "./assets/styles/spinners";
+@import "./assets/styles/rtl";
+@import "./assets/styles/theme-config";
+@import "./assets/styles/skins";
+@import "./assets/styles/md-skin";
+@import "./assets/styles/media";
+@import "./assets/styles/custom";
+
+.close {
+    float: right;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .5;
+}
+
+.m-y-3 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}

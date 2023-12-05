@@ -8,12 +8,12 @@ export const MENU_USUARIO: ItemMenu[] = [
   },
   {
     nome: "Meu perfil",
-    url: "/meu-perfil",
+    url: "/perfil",
     icone: "fa fa-user"
   },
   {
     nome: "Minhas finanças",
     url: "/financas",
-    icone: "fa fa-history"
+    icone: "fa fa-money"
   }
 ];

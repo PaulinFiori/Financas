@@ -1,1 +1,95 @@
-<p>perfil works!</p>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
+<div class="row">
+    <div class="col-sm-12">
+        <form class="form-horizontal" #form="ngForm" autocomplete="off">
+            <div>
+                <div class="row">
+                    <div class="col-lg-12 padding-form">
+                        <div class="form-group">
+                            <div>
+                                <div>
+                                    <div class="form-group div-foto row">
+                                        <div class="col-sm-12 align-center">
+                                            <img class="square-image img-circle img-profile" [src]="fotoUrl || '../../../../assets/images/user.webp'">
+                                            <p class="m-t-sm" *ngIf="value?.url">
+                                                <a (click)="alterarFoto()">Alterar</a> | <a (click)="removerFoto()">Remover</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                        
+                                    <div class="row" *ngIf="showInput">
+                                        <label class="col-sm-2 control-label">Foto</label>
+                                        <div class="col-sm-10" style="padding-left:15px;padding-right: 15px">
+                                            <div class="fileinput fileinput-new input-group" data-provides="fileinput">
+                                                <div class="form-control div-input" data-trigger="fileinput" #fileField>
+                                                    <i [ngClass]="{'glyphicon glyphicon-file fileinput-exists': !isLoading, 'fas fa-circle-notch fa-spin loading-icon': isLoading}"></i>
+                                                    <span class="fileinput-filename" [ngStyle]="{'max-width.px': inputMaxWidth}"></span>
+                                                </div>
+                                                <span class="input-group-addon btn btn-default btn-file">
+                                                    <span class="fileinput-new">Selecionar arquivo</span>
+                                                    <span class="fileinput-exists">Alterar</span>
+                                                    <input type="file" ng2FileSelect [uploader]="uploader" [accept]="accept" name="uploader">
+                                                </span>
+                                                <a class="input-group-addon btn btn-default fileinput-exists " data-dismiss="fileinput " (click)="clearInput()">Remover</a>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                    
+                                    <div class="row">
+                                        <label class="col-sm-2 control-label" [ngClass]="{'text-danger': getInputErrorsNome()}">
+                                            Nome
+                                            <span class="text-danger">*</span>
+                                        </label>
+                                        <div class="m-b-sm col-sm-10">
+                                            <input type="text" class="form-control" [ngClass]="{'form-control-error': getInputErrorsNome()}" #inputNome="ngModel"
+                                                name="nome" [ngModel]="valueNome" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <label class="col-sm-2 control-label" [ngClass]="{'text-danger': getInputErrorsEmail()}">
+                                            Email
+                                            <span class="text-danger">*</span>
+                                        </label>
+                                        <div class="m-b-sm col-sm-10">
+                                            <input type="text" class="form-control" [ngClass]="{'form-control-error': getInputErrorsEmail()}" #inpuEmail="ngModel"
+                                                name="email" [ngModel]="valueEmail" email required>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <div class="m-b-sm col-sm-10 col-sm-offset-2 row">
+                                            <p-checkbox [ngModel]="senhaAlterada" name="senhaAlterada" [binary]="true" label="Alterar senha" (ngModelChange)="onSenhaAlteradaChange($event)"></p-checkbox>
+                                        </div>
+                                        <div class="row">
+                                            <label class="col-sm-2 control-label p-t-none flex" [ngClass]="{'text-danger': getInputErrorsSenha()}">
+                                                Senha
+                                                <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="m-b-sm col-sm-4">
+                                                <input type="password" class="form-control" [ngClass]="{'form-control-error': getInputErrorsSenha()}" #inputSenha="ngModel"
+                                                    name="senha" [ngModel]="valueSenha" (ngModelChange)="onValueChangeSenha($event)" required autocomplete="off">
+                                            </div>
+                                            <label class="col-sm-2 control-label p-t-none flex" [ngClass]="{'text-danger': getInputConfirmErrors()}">
+                                                Confirmar senha
+                                                <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="m-b-sm col-sm-4">
+                                                <input type="password" class="form-control" [ngClass]="{'form-control-error': getInputConfirmErrors()}"
+                                                    #inputConfirm="ngModel" name="confirmSenha" [ngModel]="confirmSenha" (ngModelChange)="onConfirmChange($event)"
+                                                    required autocomplete="off">
+                                            </div>
+                                        </div>                                          
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>     
+    </div>
+</div>

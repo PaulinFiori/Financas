@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { DomSanitizer, SafeHtml } from "@angular/platform-browser";
-import { Router } from "@angular/router";
+import { Router } from "../../../../../node_modules/@angular/router";
 import "jquery-slimscroll";
 import { ToastrService } from "ngx-toastr";
 import { CrudService } from "../../../../services/crud.service";
@@ -41,6 +41,7 @@ export class NavigationComponent implements OnInit {
   ngOnInit() {
     const token = this.userService.getUserInfo();
 
+    this.username = "Paulo";
     if (token) {
       this.username = token.nome;
       this.userPhoto = token.foto;

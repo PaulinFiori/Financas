@@ -26,6 +26,7 @@ import { AngularFireAuthModule } from "@angular/fire/compat/auth";
 import { AngularFirestoreModule } from "@angular/fire/compat/firestore";
 import { GuardsModule } from "./components/common/guards/guards.module";
 import * as firebase from "firebase/app";
+import { FinancasModule } from './components/financas/financas.module';
 
 export function tokenGetter() {
   return localStorage.getItem("token");
@@ -50,6 +51,7 @@ firebase.initializeApp(environment.firebase);
     PerfilModule,
     RecuperarSenhaModule,
     LayoutsModule,
+    FinancasModule,
     ToastrModule.forRoot({
       preventDuplicates: true
     }),

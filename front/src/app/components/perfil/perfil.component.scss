@@ -1,0 +1,86 @@
+.div-foto {
+    margin-bottom: 20px;
+}
+  
+.img-profile {
+    width: 100px;
+    height: 100px;
+}
+  
+
+.div-input {
+    display: flex;
+}
+  
+.div-input>i {
+    margin-right: 5px;
+}
+  
+.fileinput-filename {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+  
+.td-flex {
+    display: flex;
+    border-top: 0 !important;
+}
+
+.td-flex div:first-child .btn {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.td-flex div:nth-child(2) .btn {
+    border-radius: 0px;
+}
+
+.td-flex div:last-child .btn {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.loading-icon {
+    display: flex;
+    align-items: center;
+}
+  
+.p-t-none {
+    padding-top: 0px;
+}
+  
+.flex {
+    display: flex;
+    justify-content: flex-end;
+}
+  
+.flex-start {
+    justify-content: flex-start;
+  }
+  
+.p-15 {
+    padding: 15px;
+}
+  
+.btn-l-5 {
+    padding-left: 5px;
+}
+
+@media only screen and (max-width: 767px) {
+    .flex {
+        justify-content: flex-start;
+    }  
+}
+  
+@media screen and (max-width: 991px) {
+    .marginForm {
+      margin: -30% 0% 0% 0%;
+    }
+}
+  
+@media screen and (max-width: 1130px) and (min-width: 992px) {
+    .form-group {
+      align-items: flex-start;
+    }
+}

@@ -1,0 +1,181 @@
+@media (min-width: 992px) {
+  #page-wrapper {
+    position: inherit;
+    margin: 0 0 0 $sidebar-width;
+    min-height: 100vh;
+  }
+
+  .navbar-static-side {
+    z-index: 2001;
+    position: absolute;
+    width: $sidebar-width;
+  }
+
+  .navbar-top-links .dropdown-messages,
+  .navbar-top-links .dropdown-tasks,
+  .navbar-top-links .dropdown-alerts {
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 991px) {
+
+  #page-wrapper {
+    position: inherit;
+    margin: 0 0 0 0;
+    min-height: 100vh;
+  }
+
+  .body-small .navbar-static-side {
+    display: none;
+    z-index: 2001;
+    position: absolute;
+    width: 70px;
+  }
+
+  .body-small.mini-navbar .navbar-static-side {
+    display: block;
+  }
+
+  .lock-word {
+    display: none;
+  }
+
+  .navbar-form-custom {
+    display: none;
+    left: 22px;
+  }
+
+  .navbar-header {
+    display: inline;
+    float: left;
+  }
+
+  .sidebar-panel {
+    z-index: 2;
+    position: relative;
+    width: auto;
+    min-height: 100% !important;
+  }
+
+  .sidebar-content .wrapper {
+    padding-right: 0;
+    z-index: 1;
+  }
+
+  .fixed-sidebar.body-small .navbar-static-side {
+    display: none;
+    z-index: 2001;
+    position: fixed;
+    width: $sidebar-width;
+  }
+
+  .fixed-sidebar.body-small.mini-navbar .navbar-static-side {
+    display: block;
+  }
+
+  .ibox-tools {
+    float: none;
+    text-align: right;
+    display: block;
+  }
+
+  .navbar-static-side { display: none; }
+
+  body:not(.mini-navbar) {
+    -webkit-transition: background-color 500ms linear;
+    -moz-transition: background-color 500ms linear;
+    -o-transition: background-color 500ms linear;
+    -ms-transition: background-color 500ms linear;
+    transition: background-color 500ms linear;
+    background-color: #f3f3f4
+  }
+
+   .ui-paginator .ui-paginator-page,
+   .ui-paginator .ui-paginator-pages,
+   .ui-paginator .ui-paginator-next,
+   .ui-paginator .ui-paginator-last,
+   .ui-paginator .ui-paginator-first,
+   .ui-paginator .ui-paginator-prev,
+   .ui-paginator .ui-paginator-current,
+   .ui-paginator .ui-dropdown {
+      height: 30px !important;
+  }
+
+  .ui-paginator-bottom .ui-dropdown .ui-dropdown-label {
+      height: 28px !important;
+      padding-top: 5px !important;
+  }
+
+  body .ui-paginator .ui-paginator-first,
+  body .ui-paginator .ui-paginator-prev,
+  body .ui-paginator .ui-paginator-next,
+  body .ui-paginator .ui-paginator-last,
+  body .ui-paginator .ui-paginator-pages .ui-paginator-page {
+      padding-top: 5px !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .ui-table table {
+     table-layout: inherit !important;
+   }
+}
+
+@media (max-width: 350px) {
+
+  .timeline-item .date {
+    text-align: left;
+    width: 110px;
+    position: relative;
+    padding-top: 30px;
+  }
+
+  .timeline-item .date i {
+    position: absolute;
+    top: 0;
+    left: 15px;
+    padding: 5px;
+    width: 30px;
+    text-align: center;
+    border: 1px solid $border-color;
+    background: #f8f8f8;
+  }
+
+  .timeline-item .content {
+    border-left: none;
+    border-top: 1px solid $border-color;
+    padding-top: 10px;
+    min-height: 100px;
+  }
+
+  .nav.navbar-top-links li.dropdown {
+    display: none;
+  }
+
+  .ibox-tools {
+    float: none;
+    text-align: left;
+    display: inline-block;
+  }
+
+}
+
+@media (max-width:991px) and (min-width:768px) {
+    .form-horizontal .control-label {
+      padding-top: 0px;
+      margin-bottom: 0;
+      text-align: right;
+    }
+
+    .m-b-sm {
+      margin-bottom: 20px;
+    }
+}
+
+@media (min-width: 993px) {
+  .ui-paginator-bottom .ui-dropdown .ui-dropdown-label {
+      height: 23px !important;
+      padding-top: 3px !important;
+  }
+}

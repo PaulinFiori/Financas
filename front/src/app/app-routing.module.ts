@@ -7,6 +7,7 @@ import { PerfilComponent } from './components/perfil/perfil.component';
 import { BlankLayoutComponent } from './components/common/layouts/blankLayout.component';
 import { BasicLayoutComponent } from './components/common/layouts/basicLayout.component';
 import { RecuperarSenhaComponent } from './components/recuperar-senha/recuperar-senha.component';
+import { FinancasComponent } from './components/financas/financas.component';
 import { AuthGuard } from 'src/guards/auth.guard';
 
 const ROUTES: Routes = [
@@ -39,7 +40,8 @@ const ROUTES: Routes = [
     canActivate: [AuthGuard],
     children: [
     { path: 'index', component: HomeComponent },
-    { path: 'perfil', component: PerfilComponent }
+    { path: 'perfil', component: PerfilComponent },
+    { path: 'financas', component: FinancasComponent }
     ]
   }
 ];
