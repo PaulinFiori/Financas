@@ -1,6 +1,7 @@
 import { Component, EventEmitter, HostListener, Input, OnInit, Output, ViewChild, ElementRef } from "@angular/core";
 import { FileItem, FileUploader, ParsedResponseHeaders } from "ng2-file-upload";
 import { NgModel, NgForm } from "@angular/forms";
+import { Router } from "@angular/router";
 
 declare var $: any;
 
@@ -17,6 +18,8 @@ export class PerfilComponent implements OnInit {
   confirmSenha: any;
   @Output()
   valueChange = new EventEmitter();
+  @Output()
+  saveFinish = new EventEmitter();
   public inputWidth: any;
   public fotoUrl: string | null;
   public fileLoading: boolean;
@@ -24,6 +27,7 @@ export class PerfilComponent implements OnInit {
   public showInput: boolean;
   senhaAlterada: boolean = false;
   @ViewChild("form", { static: true }) ngForm: NgForm;
+  @ViewChild("fileField", { static: true }) fileField: ElementRef;
   @ViewChild("inputNome", { static: true }) inputNome: NgModel;
   @ViewChild("inpuEmail", { static: true }) inpuEmail: NgModel;
   @ViewChild("inputSenha", { static: true }) inputSenha: NgModel;
@@ -38,15 +42,14 @@ export class PerfilComponent implements OnInit {
   isLoadingChange = new EventEmitter();
   @Output()
   errorEmitter = new EventEmitter();
-  @ViewChild("fileField", { static: true })
-  fileField: ElementRef;
   public uploader: FileUploader | any;
 
   @HostListener("window:resize", ["$event"])
   onResize(event: any) {
+    this.calcInputFileWidth();
   }
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit() {
     this.setPhoto();
@@ -197,16 +200,34 @@ export class PerfilComponent implements OnInit {
   }
 
   onConfirmChange(event: any) {
-    if (event !== this.valueSenha)
+    this.confirmSenha = event;
+    if (event != this.valueSenha)
       this.inputConfirm.control.setErrors({ MatchPassword: true });
   }
 
   onValueChangeSenha(event: any) {
-    if (this.confirmSenha !== this.valueSenha)
+    this.valueSenha = event;
+    console.log(this.confirmSenha != this.valueSenha);
+    console.log(this.inputConfirm);
+    if (this.confirmSenha != this.valueSenha)
       this.inputConfirm.control.setErrors({ MatchPassword: true });
   }
 
   onSenhaAlteradaChange(event: any) {
     this.senhaAlterada = event;
+  }
+
+  calcInputFileWidth() {
+    this.inputWidth = this.fileField.nativeElement.offsetWidth - 60;
+  }
+
+  disableSave() {
+    if (this.fileLoading) return true;
+    else return false;
+  }
+
+  hideModal() {
+    this.saveFinish.emit("cancel");
+    this.router.navigate(["/index"]);
   }
 }
