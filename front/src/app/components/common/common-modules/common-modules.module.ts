@@ -7,6 +7,7 @@ import { ModalModule } from "ngx-bootstrap/modal";
 import { ErrorIconModule } from "../erroricon/erroricon.module";
 import { LoadingModule } from "../loading/loading.module";
 import { PrimeNgElementsModule } from "../prime-ng-elements/prime-ng-elements.module";
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { PrimeNgElementsModule } from "../prime-ng-elements/prime-ng-elements.mo
     PrimeNgElementsModule,
     ModalModule,
     LoadingModule,
-    ErrorIconModule
+    ErrorIconModule,
+    SweetAlert2Module
   ],
   exports: [
     CommonModule,
@@ -27,7 +29,8 @@ import { PrimeNgElementsModule } from "../prime-ng-elements/prime-ng-elements.mo
     PrimeNgElementsModule,
     ModalModule,
     LoadingModule,
-    ErrorIconModule
+    ErrorIconModule,
+    SweetAlert2Module
   ]
 })
 export class CommonModulesModule {}

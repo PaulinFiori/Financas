@@ -27,6 +27,8 @@ import { AngularFirestoreModule } from "@angular/fire/compat/firestore";
 import { GuardsModule } from "./components/common/guards/guards.module";
 import * as firebase from "firebase/app";
 import { FinancasModule } from './components/financas/financas.module';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { FinancasEspecificaModule } from './components/financa-especifica/financas-especifica.module'
 
 export function tokenGetter() {
   return localStorage.getItem("token");
@@ -52,6 +54,7 @@ firebase.initializeApp(environment.firebase);
     RecuperarSenhaModule,
     LayoutsModule,
     FinancasModule,
+    FinancasEspecificaModule,
     ToastrModule.forRoot({
       preventDuplicates: true
     }),
@@ -65,7 +68,8 @@ firebase.initializeApp(environment.firebase);
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    SweetAlert2Module.forRoot()
   ],
   providers: [
     JwtInterceptor,

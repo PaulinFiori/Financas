@@ -9,6 +9,7 @@ import { BasicLayoutComponent } from './components/common/layouts/basicLayout.co
 import { RecuperarSenhaComponent } from './components/recuperar-senha/recuperar-senha.component';
 import { FinancasComponent } from './components/financas/financas.component';
 import { AuthGuard } from 'src/guards/auth.guard';
+import { FinancasEspeficaComponent } from './components/financa-especifica/financas-especifica.component';
 
 const ROUTES: Routes = [
   {
@@ -41,7 +42,8 @@ const ROUTES: Routes = [
     children: [
     { path: 'index', component: HomeComponent },
     { path: 'perfil', component: PerfilComponent },
-    { path: 'financas', component: FinancasComponent }
+    { path: 'financas', component: FinancasComponent },
+    { path: 'financa-especifica', component: FinancasEspeficaComponent }
     ]
   }
 ];
